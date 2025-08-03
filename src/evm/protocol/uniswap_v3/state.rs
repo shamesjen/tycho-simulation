@@ -216,6 +216,25 @@ impl UniswapV3State {
             sqrt_price_next
         }
     }
+    
+    pub fn liquidity(&self) -> u128 {
+        self.liquidity
+    }
+
+    /// Expose current sqrt_price
+    pub fn sqrt_price(&self) -> U256 {
+        self.sqrt_price
+    }
+
+    /// Expose current tick index
+    pub fn current_tick(&self) -> i32 {
+        self.tick
+    }
+
+    /// Expose remaining ticks (cloned)
+    pub fn remaining_ticks(&self) -> Vec<TickInfo> {
+        self.ticks.iter().cloned().collect()
+    }
 }
 
 impl ProtocolSim for UniswapV3State {
