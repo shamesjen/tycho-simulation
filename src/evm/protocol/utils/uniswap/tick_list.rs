@@ -242,6 +242,10 @@ impl TickList {
             Ok((next_tick_idx, next_tick_idx == idx))
         }
     }
+
+    pub fn all_ticks(&self) -> Vec<TickInfo> {
+        self.ticks.clone()
+    }
 }
 
 fn div_floor(lhs: i32, rhs: i32) -> i32 {

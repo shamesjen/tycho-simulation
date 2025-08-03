@@ -216,7 +216,7 @@ impl UniswapV3State {
             sqrt_price_next
         }
     }
-    
+
     pub fn liquidity(&self) -> u128 {
         self.liquidity
     }
@@ -231,10 +231,11 @@ impl UniswapV3State {
         self.tick
     }
 
-    /// Expose remaining ticks (cloned)
-    pub fn remaining_ticks(&self) -> Vec<TickInfo> {
-        self.ticks.iter().cloned().collect()
+    /// Expose all ticks (cloned)
+    pub fn all_ticks(&self) -> Vec<TickInfo> {
+        self.ticks.all_ticks()
     }
+
 }
 
 impl ProtocolSim for UniswapV3State {
