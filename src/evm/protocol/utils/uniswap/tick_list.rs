@@ -18,6 +18,20 @@ impl TickInfo {
         let sqrt_price = get_sqrt_ratio_at_tick(index).unwrap();
         TickInfo { index, net_liquidity, sqrt_price }
     }
+
+    pub fn index(&self) -> i32 {
+        self.index
+    }
+
+    /// The net liquidity at this tick
+    pub fn net_liquidity(&self) -> i128 {
+        self.net_liquidity
+    }
+
+    /// The sqrt_price at this tick
+    pub fn sqrt_price(&self) -> U256 {
+        self.sqrt_price
+    }
 }
 
 impl PartialOrd for TickInfo {
